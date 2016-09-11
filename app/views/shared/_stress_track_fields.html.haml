@@ -6,11 +6,9 @@
     .col-md-3
       = f.input :skill_id, collection: Skill.from_skill_group(params[:skill_group_id] || SkillGroup::FATE_CORE).sort_by{ |s| s.name }, label: false
     .col-md-6
-      %ul.list-inline.form__stress-track
+      = link_to_add_association "", f, :stress_levels, partial: "shared/stress_level_fields", data: { :'association-insertion-node' => "#form__stress-track-#{f.object.id}", :'association-insertion-method' => :append }, class: "stress-box__link-to-add"
+      %ul.list-inline.form__stress-track{ id: "form__stress-track-#{f.object.id}" }
         = f.fields_for :stress_levels, f.object.stress_levels.any? ? f.object.stress_levels : levels.map{ |l| StressLevel.new(l) } do |l|
-          %li.form__stress-box
-            = l.input :id, as: :hidden
-            = l.input :level, as: :hidden
-            = l.input :checked, label: l.object.level
+          = render "shared/stress_level_fields", f: l
     = link_to_remove_association f do
       .fa.fa-times

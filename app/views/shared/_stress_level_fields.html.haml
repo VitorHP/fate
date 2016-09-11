@@ -1,0 +1,5 @@
+%li.form__stress-box.nested-fields.form__stress-box--valid
+  = f.input :id, as: :hidden
+  = f.input :level, as: :hidden, input_html: { class: "stress-box__level" }
+  = f.input :checked, label: content_tag(:span, f.object.level, class: "stress-box__checked-label")
+  = link_to_remove_association "", f, class: "stress-box__link-to-remove"

@@ -47,7 +47,7 @@ class CharactersController < ApplicationController
       stunts_attributes: [:id, :name, :description, :_destroy],
       extras_attributes: [:id, :name, :description, :_destroy],
       stress_tracks_attributes: [:id, :name, :skill_id, :_destroy,
-        stress_levels_attributes: [:id, :level, :checked]
+        stress_levels_attributes: [:id, :level, :checked, :_destroy]
       ],
       consequences_attributes: [:id, :level, :name, :description, :skill_id, :skill_level_to_unlock, :_destroy]
     ])

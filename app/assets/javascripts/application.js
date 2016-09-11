@@ -19,9 +19,12 @@
 //= require cocoon
 
 import CharacterListItem from './modules/character_list_item';
+import StressTrack from './modules/stress_track';
 
 $(document).ready(() => {
   $('.character-list-item').map((index, characterListItem) =>
-    new CharacterListItem(characterListItem)
-  );
+    new CharacterListItem(characterListItem));
+
+  $('.stress-track-fields').map((index, stressTrack) =>
+    new StressTrack(stressTrack));
 });
