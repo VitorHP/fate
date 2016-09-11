@@ -3,6 +3,7 @@ class CreateScenes < ActiveRecord::Migration
     create_table :scenes do |t|
       t.string :name
       t.integer :campaign_id
+      t.text :description
 
       t.timestamps null: false
     end

@@ -4,6 +4,7 @@ class Campaign < ActiveRecord::Base
   has_many :stress_tracks, as: :stressable, dependent: :destroy
   has_many :consequences, as: :consequential, dependent: :destroy
   has_many :skills, through: :skill_group
+  has_many :scenes
   belongs_to :skill_type
   belongs_to :skill_group
   belongs_to :user
@@ -11,6 +12,7 @@ class Campaign < ActiveRecord::Base
   accepts_nested_attributes_for :aspects, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :stress_tracks, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :consequences, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :scenes, allow_destroy: true, reject_if: :all_blank
 
   validates :number_of_aspects, :number_of_initial_stunts, :refresh_rate, inclusion: { in: 1..15, message: :must_be_between, min: 1, max: 15 }
   validates :skill_cap, inclusion: { in: 1..8, message: :must_be_between, min: 1, max: 8 }

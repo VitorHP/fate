@@ -4,7 +4,7 @@ Fate::Application.routes.draw do
     devise_for :users, skip: :omniauth_callbacks
 
     resources :characters, only: [:new, :create, :edit, :update, :show]
-    # resources :campaigns
+    resources :campaigns, only: [:index, :new, :create]
 
     root to: 'home#index'
   end

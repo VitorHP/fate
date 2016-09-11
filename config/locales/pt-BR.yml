@@ -228,6 +228,9 @@ pt-BR:
       house_rule:
         one: Regra Caseira
         other: Regras Caseiras
+      scene:
+        one: Cena
+        other: Cenas
       skill:
         one: Perícia
         other: Perícias
@@ -271,6 +274,9 @@ pt-BR:
         description: Descrição
         idiom: Idioma
         type_tags: Tags
+      scene:
+        name: Nome
+        description: Descrição
       skill:
         athletics: Atletismo
         burglary: Roubo

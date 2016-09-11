@@ -1,0 +1,7 @@
+%fieldset#scenes-panel
+  %h2.header
+    = t("activerecord.models.scene", count: 2)
+  = link_to_add_association f, :scenes, partial: "shared/scene_fields", data: { :'association-insertion-traversal' => :next, :'association-insertion-method' => :append } do
+    .fa.fa-plus
+  = f.fields_for :scenes do |a|
+    = render "shared/scene_fields", f: a

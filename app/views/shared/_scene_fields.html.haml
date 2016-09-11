@@ -1,0 +1,9 @@
+.nested-fields.scene
+  = f.input :id, as: :hidden
+  = f.input :name, label: false, placeholder: t("activerecord.attributes.scene.name")
+  = f.input :description, label: false, placeholder: t("activerecord.attributes.scene.description"), input_html: { rows: 6 }
+  = link_to_remove_association f do
+    .fa.fa-times
+  .row
+    %fieldset.col-md-12
+      = render "shared/aspects_form", f: f
